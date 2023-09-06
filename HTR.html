@@ -10,21 +10,27 @@
     <body> 
         <h1>HTRJ a rhythm game prototype</h1>
         <p>Click anywhere to start.</p>
-        <p>Use space/click to play.</p>
+        <p>Use T and G to play.</p>
         <div id="game">
             <div class="character C1"></div>
             <div class="character C2"></div>
             <div class="Block B1"></div>
             <div class="Block B2"></div>
-            <video id="video"disablePictureInPicture autoplay preload controls allowfullscreen="false"
+            <div id="Countdown">3</div>
+            <video id="video"disablePictureInPicture preload allowfullscreen="false"
         src="Ray Charles - Hit The Road Jack (Official Lyrics Video).mp4" type="video/mp4">
     </video>
         </div>
-        
+        <div>
+            <p class="Score">Score:</p>
+            <label class ="Score s2">0000</label> 
+        </div>
+       
+
         <div id ="box">
-            <button class=" btn1 hov1"> T </button>
-            <button class=" btn2 hov2"> G </button>
-            </div>>
+            <button class=" btn1 hov1"> G </button>
+            <button class=" btn2 hov2"> T </button>
+            </div>
 
 </body>
 <script src="script.js"></script>
