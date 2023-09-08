@@ -21,22 +21,20 @@ p {
     max-width: 500px;
     border: 2px solid black;
     background-color: white;
-    position: fixed;
-    left: 510px;
     padding: 0%;
-    overflow: hidden;
+    margin: auto;
+    position: relative;
+    z-index: 0;
 }
 .Score{
-    position: relative;
-    top:400px;      
+    margin: 10px auto;    
 }
-label{
+
+#board{
     font-size: 30px;
-}
-.s2{
-    text-align: center;
-    display: block;
-    margin: 0px;
+    align-content: center;
+    justify-content: center;
+    display: flex;
 }
 @keyframes slide1{
     from{
@@ -44,7 +42,7 @@ label{
     }
 
     to{
-        transform: translateX(-460px);
+        transform: translateX(-450px);
     }
 }
 @keyframes slide2{
@@ -53,7 +51,7 @@ label{
     }
 
     to{
-        transform: translateX(-460px);
+        transform: translateX(-450px);
     }
 }
 .Block {
@@ -83,8 +81,8 @@ label{
 #Countdown
 {
     position: absolute;
-    left:230px;
-    top:25%;
+    top:100px;
+    left: 47%;
     font-size: 50px;
     user-select: none;
     animation-name: none;
@@ -103,13 +101,12 @@ label{
     }
 }
 
-video{
+#video{
     height: 350px;
-    width: 100%;
+    width: 500px;
     position:absolute;
-    object-fit: fill;
-    top:0%;
     opacity: 25%;
+    object-fit: fill;
     z-index: -1;
 }
 button
@@ -121,9 +118,10 @@ button
         border: 3px solid white;
         color: white;
         border-radius: 50%;
-        margin: 0px;
         font-family: "Lucida Console", "Lucida";
         font-size: large;
+        left:-12%;
+        z-index: 0;
     }
     
 .C1{
@@ -152,20 +150,16 @@ button
     opacity: 0.25;
 }
 
+    .btn1 {
+        position: absolute;
+        top:80%;
+        
+    }
 
-.btn1 {
-    top: 200px;
-    position: relative;
-    left: 435px;
-}
-
-.btn2 {
-
-    top: 330px;
-    position: absolute;
-    left: 440px;
-
-}
+    .btn2 { 
+        position: absolute;
+        top: 55%;
+    }
 
 
 .hov1:hover

@@ -3,20 +3,20 @@
  var score = document.getElementById("board")
  var Block = document.getElementsByClassName("Block B1");
  var Block2 = document.getElementsByClassName("Block B2");
- var video =document.getElementById("video");
  var countdown = document.getElementById("Countdown");
  let iteration=1;
- var B1left= window.getComputedStyle(Block[0]).getPropertyValue("transform");
- var B2left= window.getComputedStyle(Block2[0]).getPropertyValue("transform");
- var Bmatrix = new DOMMatrix(B1left);
- var Bmatrix2 = new DOMMatrix(B2left); 
+
  const G = document.getElementsByClassName("btn1");
  const T = document.getElementsByClassName("btn2");
  function start()
-    {
+    {   var B1left= window.getComputedStyle(Block[0]).getPropertyValue("transform");
+        var B2left= window.getComputedStyle(Block2[0]).getPropertyValue("transform");
+        var Bmatrix = 0;
+        var Bmatrix2 = 0;
+        var video =document.getElementById("video");
         video.play();
         
-   
+        document.addEventListener("keydown", player);
         G[0].addEventListener("mousedown",player);
         T[0].addEventListener("mousedown",player);
     function player(e)
@@ -27,12 +27,12 @@
         if(e.code=="KeyG" || e.type =="mousedown")
         {  
              
-             if( Math.abs(parseInt(Bmatrix.m41)) >= 440-15 || (Math.abs(parseInt(Bmatrix.m41)+440) <= 15) )
+             if( Math.abs(parseInt(Bmatrix.m41)) >= 440-20 && (Math.abs(parseInt(Bmatrix.m41)+440) <= 20) )
             {
                 board+=200;
                 score.innerHTML=board;
             }
-            else if( Math.abs(parseInt(Bmatrix.m41)) >= 440-27 || (Math.abs(parseInt(Bmatrix.m41)+440) <= 27))
+            else if( Math.abs(parseInt(Bmatrix.m41)) >= 440-40 && (Math.abs(parseInt(Bmatrix.m41)+440) <= 40))
             {
                 board+=100;
                 score.innerHTML=board;
@@ -41,19 +41,18 @@
         if(e.code=="KeyT" || e.type =="mousedown")
         {  
              
-              if( Math.abs(parseInt(Bmatrix2.m41)) >= 440-15 || (Math.abs(parseInt(Bmatrix2.m41)+440) <= 15) )
+              if( Math.abs(parseInt(Bmatrix2.m41)) >= 440-20 && (Math.abs(parseInt(Bmatrix2.m41)+440) <= 20) )
              {
                  board+=200;
                  score.innerHTML=board;
              }
-             else if( Math.abs(parseInt(Bmatrix2.m41)) >= 440-27 || (Math.abs(parseInt(Bmatrix2.m41)+440) <= 27))
+             else if( Math.abs(parseInt(Bmatrix2.m41)) >= 440-40 && (Math.abs(parseInt(Bmatrix2.m41)+440) <= 40))
              {
                  board+=100;
                  score.innerHTML=board;
              }
          }
     }
-    document.addEventListener("keydown", player);
 
         countdown.style.animationName="counter";
         Block[0].style.animationName="slide1";
@@ -74,6 +73,7 @@
              countdown.style.animationName="none";
             };
         iteration++;
+        
         }
         
         setTimeout(()=>
