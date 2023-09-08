@@ -40,11 +40,20 @@ label{
 }
 @keyframes slide1{
     from{
-        transform: translateX(445px);
+        transform: translateX(0px);
     }
 
     to{
-        transform: translateX(-450px);
+        transform: translateX(-460px);
+    }
+}
+@keyframes slide2{
+    from{
+        transform: translateX(0px);
+    }
+
+    to{
+        transform: translateX(-460px);
     }
 }
 .Block {
@@ -56,7 +65,6 @@ label{
     position: absolute;
     left: 445px;
     border-radius: 50%;
-    animation-name: none;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
 }
@@ -75,14 +83,15 @@ label{
 #Countdown
 {
     position: absolute;
-    left:40%;
-    top:45%;
+    left:230px;
+    top:25%;
     font-size: 50px;
     user-select: none;
     animation-name: none;
     animation-duration: 1.53s;
     animation-timing-function: linear;
     animation-iteration-count: 4;
+    opacity: 100;
 }
 
 @keyframes counter {
@@ -115,8 +124,6 @@ button
         margin: 0px;
         font-family: "Lucida Console", "Lucida";
         font-size: large;
-        position: absolute;
-        left: 450px;
     }
     
 .C1{
@@ -131,23 +138,32 @@ button
 .B1{
     background-color: blueviolet;
     top: 295px;
-    animation-duration: calc(60s/86.8);
+    animation-name: none;
+    animation-duration: calc(60s/86.82);
+    animation-delay: calc((60s/86.82)*7.5);
+    opacity: 1;
 }
 .B2 {
     background-color: red;
     top: 45%;
+    animation-name: none;
     animation-duration: calc(60s/86.8);
     animation-delay: calc((60s/86.8)/2);
+    opacity: 0.25;
 }
 
 
 .btn1 {
-    top: 60%;
+    top: 200px;
+    position: relative;
+    left: 435px;
 }
 
 .btn2 {
 
-    top: 300px;
+    top: 330px;
+    position: absolute;
+    left: 440px;
 
 }
 
